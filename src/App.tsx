@@ -1,4 +1,4 @@
-import { Layout, Menu, Typography, Card, Space, Tag, ConfigProvider } from "antd";
+import { Layout, Menu, Typography, Card, Space, Tag, ConfigProvider, Button, Col, Row } from "antd";
 import { GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 
@@ -48,11 +48,32 @@ function HeaderNav() {
 function HomePage() {
   return (
     <Space direction="vertical" size={24} style={{ width: "100%" }}>
-      <Card>
-        <Title>Hi, I am Your Name</Title>
-        <Paragraph>
-          Frontend developer focused on building modern and fast web experiences with React.
-        </Paragraph>
+      <Card className="hero-card">
+        <Row gutter={[24, 24]} align="middle">
+          <Col xs={24} md={15}>
+            <Space direction="vertical" size={12}>
+              <Tag color="geekblue">Frontend Developer</Tag>
+              <Title className="hero-title">Hi, I am Your Name</Title>
+              <Paragraph className="hero-text">
+                I build responsive and accessible interfaces with React, TypeScript, and Ant Design.
+                I focus on clean code, reusable components, and smooth user experiences.
+              </Paragraph>
+              <Space wrap>
+                <Button type="primary" size="large">
+                  View My Projects
+                </Button>
+                <Button size="large">Contact Me</Button>
+              </Space>
+            </Space>
+          </Col>
+          <Col xs={24} md={9}>
+            <Card size="small" title="Quick Highlights">
+              <Paragraph>2+ years building frontend applications.</Paragraph>
+              <Paragraph>Specialized in React ecosystem and UI architecture.</Paragraph>
+              <Paragraph style={{ marginBottom: 0 }}>Open for freelance and full-time roles.</Paragraph>
+            </Card>
+          </Col>
+        </Row>
       </Card>
       <Card title="Skills">
         <Space wrap>
